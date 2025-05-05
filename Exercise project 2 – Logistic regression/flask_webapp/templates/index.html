@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Approval Prediction</title>
+</head>
+<body>
+    <h2>Loan Application</h2>
+    <form method="POST">
+        {% for col in columns %}
+            <label>{{ col }}</label>:
+            <input type="text" name="{{ col }}" required><br><br>
+        {% endfor %}
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if result %}
+        <h3>Result: {{ result }}</h3>
+        <p>Probability of Approval: {{ probability }}</p>
+    {% endif %}
+</body>
+</html>

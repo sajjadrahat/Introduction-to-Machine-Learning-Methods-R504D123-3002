@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insurance Cost Prediction Webapp</title>
+</head>
+<body style="text-align:center">
+    <h2>Predict Insurance Charges By Filling Out the Form!</h2>
+    <form method="POST">
+        Age: <input type="number" name="age" required><br><br>
+        Sex:
+        <select name="sex">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select><br><br>
+        BMI: <input type="number" name="bmi" step="any" required><br><br>
+        Children: <input type="number" name="children" required><br><br>
+        Smoker:
+        <select name="smoker">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br><br>
+        Region:
+        <select name="region">
+            <option value="northeast">Northeast</option>
+            <option value="northwest">Northwest</option>
+            <option value="southeast">Southeast</option>
+            <option value="southwest">Southwest</option>
+        </select><br><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction is not none %}
+        <h3>Predicted Insurance Charges: <span style="color: green">${{ prediction }}</span></h3>
+    {% endif %}
+</body>
+</html>
